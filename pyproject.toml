@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "crewagents"
+version = "0.1.0"
+description = "crewAgents using crewAI"
+authors = ["Dipak Tandel <dipak.tandel96@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11, <=3.13"
+crewai = "^0.70.1"
+crewai-tools = "^0.12.1"
+
+[tool.poetry.scripts]
+crewagents = "crewagents.main:run"
+run_crew = "crewagents.main:run"
+train = "crewagents.main:train"
+replay = "crewagents.main:replay"
+test = "crewagents.main:test"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
