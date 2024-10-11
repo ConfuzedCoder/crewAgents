@@ -1,22 +1,28 @@
 #!/usr/bin/env python
+from crewai.llm import LLM
+import agentops
+agentops.init(default_tags=["crewai"])
+
+
 import sys
 from crewagents.crew import CrewagentsCrew
 
-# This main file is intended to be a way for your to run your
-# crew locally, so refrain from adding necessary logic into this file.
-# Replace with inputs you want to test with, it will automatically
-# interpolate any tasks and agents information
 
-topic = "'AI Agents Frameworks and Libraries. Use only technical discussion and blogs of crewai, openai forum, langgrapgh reddit discussion.'"
+topic = """Extract topic and references from the given URL below"""
+URL = "ADD URL HERE"
 
 def run():
     """
     Run the crew.
     """
     inputs = {
-        'topic': topic
+        'topic': topic,
+        'URL' : URL
     }
     CrewagentsCrew().crew().kickoff(inputs=inputs)
+
+    agentops.end_session(end_state="Success")
+
 
 
 def train():
@@ -24,7 +30,7 @@ def train():
     Train the crew for a given number of iterations.
     """
     inputs = {
-        "topic": topic
+        "topic": topic,
     }
     try:
         CrewagentsCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
@@ -54,3 +60,4 @@ def test():
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
+    
