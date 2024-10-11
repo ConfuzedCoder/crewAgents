@@ -7,12 +7,14 @@ from crewagents.crew import CrewagentsCrew
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
 
+topic = "'AI Agents Frameworks and Libraries. Use only technical discussion and blogs of crewai, openai forum, langgrapgh reddit discussion.'"
+
 def run():
     """
     Run the crew.
     """
     inputs = {
-        'topic': 'AI Agents'
+        'topic': topic
     }
     CrewagentsCrew().crew().kickoff(inputs=inputs)
 
@@ -22,7 +24,7 @@ def train():
     Train the crew for a given number of iterations.
     """
     inputs = {
-        "topic": "AI LLMs"
+        "topic": topic
     }
     try:
         CrewagentsCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
@@ -45,7 +47,7 @@ def test():
     Test the crew execution and returns the results.
     """
     inputs = {
-        "topic": "AI LLMs"
+        "topic": topic
     }
     try:
         CrewagentsCrew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
