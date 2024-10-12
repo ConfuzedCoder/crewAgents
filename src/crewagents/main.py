@@ -9,7 +9,7 @@ from crewagents.crew import CrewagentsCrew
 
 
 topic = """Extract topic and references from the given URL below"""
-URL = "ADD URL HERE"
+URL = "https://www.cricbuzz.com/cricket-news/131972/no-mohammed-shami-yet-as-india-announce-squad-for-new-zealand-tests"
 
 def run():
     """
@@ -20,9 +20,6 @@ def run():
         'URL' : URL
     }
     CrewagentsCrew().crew().kickoff(inputs=inputs)
-
-    agentops.end_session(end_state="Success")
-
 
 
 def train():
@@ -61,3 +58,6 @@ def test():
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
     
+
+if __name__ == "__main__":
+    run()

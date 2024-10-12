@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.11, <=3.13"
-crewai = "^0.70.1"
+crewai = {extras = ["agentops"], version = "^0.70.1"}
 crewai-tools = "^0.12.1"
 agentops = "^0.3.13"
 

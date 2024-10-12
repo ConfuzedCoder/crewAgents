@@ -867,6 +867,7 @@ files = [
 ]
 
 [package.dependencies]
+agentops = {version = ">=0.3.0,<0.4.0", optional = true, markers = "extra == \"agentops\""}
 appdirs = ">=1.4.4,<2.0.0"
 auth0-python = ">=4.7.1,<5.0.0"
 click = ">=8.1.7,<9.0.0"
@@ -7030,4 +7031,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.11, <=3.13"
-content-hash = "522b560f1ada422d3f3617bf5927719e16a1eb60db5fa58d5cfdf6c0668a68e2"
+content-hash = "18d3f6fa18f4096e4fa7d32c221a7099de732c5216302cce2c4427c4325d11aa"

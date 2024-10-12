@@ -1,8 +1,6 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from typing import List
-from crewagents.models import TopicData
-from agentops import record_tool, track_agent, record_action
 
 # Uncomment the following line to use an example of a custom tool
 # from crewagents.tools.custom_tool import MyCustomTool
@@ -36,6 +34,7 @@ class CrewagentsCrew():
 		config=self.agents_config['topic_scraper'],
 		verbose=True,
 		tools=[ScrapeWebsiteTool()],
+		max_iter=5
 		)
 
 	# @task
