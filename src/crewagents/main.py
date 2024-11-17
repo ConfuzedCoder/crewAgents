@@ -8,8 +8,8 @@ import sys
 from crewagents.crew import CrewagentsCrew
 
 
-topic = """Extract topic and references from the given URL below"""
-URL = "https://www.cricbuzz.com/cricket-news/131972/no-mohammed-shami-yet-as-india-announce-squad-for-new-zealand-tests"
+topic = """Extract Information about openai swarm from the below URLs. URLs are separated by ,"""
+URL = ["https://x.com/shyamalanadkat/status/1844888546014052800", "https://x.com/search?q=openai%20%20swarm&src=recent_search_click"]
 
 def run():
     """
@@ -17,7 +17,7 @@ def run():
     """
     inputs = {
         'topic': topic,
-        'URL' : URL
+        'URL': URL
     }
     CrewagentsCrew().crew().kickoff(inputs=inputs)
 

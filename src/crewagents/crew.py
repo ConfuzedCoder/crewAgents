@@ -1,6 +1,7 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 from typing import List
+from agentops import record_tool, track_agent, record_action
 
 # Uncomment the following line to use an example of a custom tool
 # from crewagents.tools.custom_tool import MyCustomTool

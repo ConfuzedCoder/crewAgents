@@ -1,9 +1,10 @@
 topic_extractor:
   description: >
-    Scrape the given URL and extract all the Topic discussed as one or two line summary 
-    and if there any URL provided as a reference for the topic extract it.
+    Scrape the content from multiple provided URLs, extract the key topics discussed across all sources, and create a LinkedIn post that highlights these topics. 
+    Ensure the post starts with a strong, attention-grabbing hook to drive engagement and make it stand out. 
+    The input URLs are separated by commas.
     ####
-    URL : {URL}
+    URL: {URL}
   expected_output: > 
-    A list of all the topics and their reference URL. Reference URL is optional.
+    A LinkedIn post draft with an engaging hook and a concise summary of the key topics discussed across all the provided URLs.
   agent: topic_scraper
